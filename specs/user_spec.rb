@@ -8,7 +8,8 @@ class TestUsers < MiniTest::Test
     user1_data = {
       'first_name' => "Daniel",
       'last_name' => "Garrido",
-      'dob' => "21/06/1976"
+      'dob' => "21/06/1976",
+      'id' => "1"
     }
     @user1 = User.new(user1_data)
   end
@@ -19,6 +20,10 @@ class TestUsers < MiniTest::Test
 
   def test_can_get_first_name()
     assert_equal("Daniel", @user1.first_name)
+  end
+
+  def test_can_get_int_id()
+    assert_equal(1, @user1.id)
   end
 
   def test_can_get_last_name()
@@ -33,5 +38,5 @@ class TestUsers < MiniTest::Test
     @user1.first_name = "Juan"
     assert_equal("Juan", @user1.first_name)
   end
-  
+
 end
