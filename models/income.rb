@@ -14,30 +14,26 @@ class Income
 
   def save()
     sql = "
-    INSERT INTO incomes
-    (amount, op_date, op_time, provider, user_id) VALUES
-    ('#{@amount}', CURRENT_DATE, LOCALTIME(0), '#{@provider}', '#{@user_id}')
-    RETURNING id;
-    "
+        INSERT INTO incomes
+        (amount, op_date, op_time, provider, user_id) VALUES
+        ('#{@amount}', CURRENT_DATE, LOCALTIME(0), '#{@provider}', '#{@user_id}')
+        RETURNING *;
+        "
     income_data = SqlRunner.run(sql)
     @id = income_data.first()['id'].to_i
-    @op_date= income_data.first()['op_date'].to_i
-    @op_time = income_data.first()['op_time'].to_i
+    @op_date= income_data.first()['op_date']
+    @op_time = income_data.first()['op_time']
   end
 
   def self.all()
-    sql = "
-    SELECT * FROM incomes;
-    "
+    sql = "SELECT * FROM incomes;"
     result = SqlRunner.run(sql)
     incomes_hash = result.map { |a_income| Income.new(a_income) }
     return incomes_hash
   end
 
   def self.find_by_id(id)
-    sql = "
-    SELECT * FROM incomes WHERE id = #{id};
-    "
+    sql = "SELECT * FROM incomes WHERE id = #{id};"
     result = SqlRunner.run(sql)
     return Income.new(result.first())
   end

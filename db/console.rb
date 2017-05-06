@@ -5,6 +5,7 @@ require_relative('../models/category.rb')
 require_relative('../models/user.rb')
 require_relative('../models/transfer.rb')
 require_relative('../models/income.rb')
+require_relative('../models/loan.rb')
 
 # Category.delete_all()
 # MasterCategory.delete_all()
@@ -19,6 +20,13 @@ incomes_cat = MasterCategory.new({'name' => "Incomes"})
 incomes_cat.save()
 salary = Category.new({'name' => "Salary", 'master_category_id' => incomes_cat.id})
 salary.save()
+
+loans_cat = MasterCategory.new({'name' => "Incomes"})
+loans_cat.save()
+barclays = Category.new({'name' => "Barclays Bank", 'master_category_id' => loans_cat.id})
+barclays.save()
+
+
 
 user1 = User.new({
   'first_name' => "Daniel",
@@ -38,6 +46,13 @@ income1 = Income.new({
   'provider' => incomes_cat.id,
   'user_id' => user1.id
   })
+
+loan1 = Loan.new({
+  'amount' => 4500,
+  'provider' => barclays.id,
+  'user_id' => user1.id
+  })
+
 
 
 
