@@ -31,21 +31,26 @@ CREATE TABLE transfers(
   id SERIAL4 PRIMARY KEY,
   amount NUMERIC(8,2),
   op_date DATE,
-  op_time time,
+  op_time TIME,
   user_id INT4 REFERENCES users(id),
-  category_id INT4 REFERENCES categories(id) 
+  category_id INT4 REFERENCES categories(id)
 );
 
 CREATE TABLE incomes(
   id SERIAL4 PRIMARY KEY,
   amount NUMERIC(8,2),
+  op_date DATE,
+  op_time TIME,
+  provider VARCHAR(255),
   user_id INT4 REFERENCES users(id)
 );
 
 CREATE TABLE loans(
   id SERIAL4 PRIMARY KEY,
   amount NUMERIC(8,2),
-  date DATE,
+  op_date DATE,
+  op_time TIME,
   provider VARCHAR(255),
-  user_id INT4 REFERENCES users(id)
+  user_id INT4 REFERENCES users(id),
+  is_payed BOOL
 );
