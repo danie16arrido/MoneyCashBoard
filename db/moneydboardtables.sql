@@ -24,7 +24,7 @@ CREATE TABLE mastercategories(
 CREATE TABLE categories(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  master_category_id INT4 REFERENCES mastercategories(id)
+  master_category_id INT4 REFERENCES mastercategories(id) ON DELETE CASCADE
 );
 
 CREATE TABLE transfers(
