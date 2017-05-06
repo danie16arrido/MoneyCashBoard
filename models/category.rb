@@ -4,6 +4,6 @@ class Category
   def initialize(params)
     @id = params['id'] if params['id']
     @name = params['name']
-    @master_category_id = params['master_category_id']
+    @master_category_id = params['master_category_id'].to_i
   end
 end
