@@ -50,4 +50,11 @@ class Category
     SqlRunner.run(sql)
   end
 
+  def self.delete_all()
+    sql = "
+    DELETE FROM categories;
+    "
+    SqlRunner.run(sql)
+  end
+
 end

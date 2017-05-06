@@ -53,4 +53,11 @@ class MasterCategory
     SqlRunner.run(sql)
   end
 
+  def self.delete_all()
+    sql = "
+    DELETE FROM mastercategories;
+    "
+    SqlRunner.run(sql)
+  end
+
 end
