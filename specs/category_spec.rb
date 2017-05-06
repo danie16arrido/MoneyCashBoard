@@ -25,4 +25,5 @@ class TestCategory < MiniTest::Test
   def test_can_get_int_id()
     assert_equal(1, @category1.id)
   end
+  
 end

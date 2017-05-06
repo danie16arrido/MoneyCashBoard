@@ -23,4 +23,5 @@ class TestIncome < MiniTest::Test
     @income1.amount = 99.99
     assert_equal(99,99, @income1.amount)
   end
+  
 end

@@ -20,4 +20,5 @@ class TestMasterCategory < MiniTest::Test
     @m_category.name = "Enjoyment"
     assert_equal("Enjoyment", @m_category.name)
   end
+  
 end
