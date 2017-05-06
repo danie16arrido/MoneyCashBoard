@@ -7,6 +7,9 @@ require_relative('../models/transfer.rb')
 require_relative('../models/income.rb')
 require_relative('../models/loan.rb')
 
+`dropdb moneydboard`
+`createdb moneydboard`
+`psql -d moneydboard -f db/moneydboardtables.sql`
 # Category.delete_all()
 # MasterCategory.delete_all()
 # User.delete_all()
@@ -15,6 +18,8 @@ mcat = MasterCategory.new({'name' => "Bills"})
 mcat.save()
 cat1 = Category.new({'name' => "Gas", 'master_category_id' => mcat.id})
 cat1.save()
+cat2 = Category.new({'name' => "Electricity", 'master_category_id' => mcat.id})
+cat2.save()
 
 incomes_cat = MasterCategory.new({'name' => "Incomes"})
 incomes_cat.save()
@@ -40,6 +45,14 @@ transfer1 = Transfer.new({
   'user_id' => user1.id,
   'category_id' => cat1.id
   })
+transfer1.save()
+
+transfer2 = Transfer.new({
+  'amount' => 44.56,
+  'user_id' => user1.id,
+  'category_id' => cat2.id
+  })
+transfer2.save()
 
 income1 = Income.new({
   'amount' => 99.99,

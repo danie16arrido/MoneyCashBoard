@@ -61,4 +61,16 @@ class User
     SqlRunner.run(sql)
   end
 
+  def log_transfer(amount, category_id)
+    transfer_data = {
+      'amount' => amount,
+      'user_id' => @id,
+      'category_id' => category_id.to_i
+    }
+    new_transfer = Transfer.new(transfer_data)
+    new_transfer.save()
+  end
+
+
+
 end
