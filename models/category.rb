@@ -6,4 +6,5 @@ class Category
     @name = params['name']
     @master_category_id = params['master_category_id'].to_i
   end
+
 end
