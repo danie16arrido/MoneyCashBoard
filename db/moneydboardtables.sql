@@ -24,16 +24,16 @@ CREATE TABLE mastercategories(
 CREATE TABLE categories(
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(255),
-  master_category_id INT4 REFERENCES mastercategories(id) ON DELETE CASCADE
+  master_category_id INT4 REFERENCES mastercategories(id)
 );
 
 CREATE TABLE transfers(
   id SERIAL4 PRIMARY KEY,
   amount NUMERIC(8,2),
   op_date DATE,
-  time time,
+  op_time time,
   user_id INT4 REFERENCES users(id),
-  category_id INT4 REFERENCES categories(id) ON DELETE CASCADE
+  category_id INT4 REFERENCES categories(id) 
 );
 
 CREATE TABLE incomes(
