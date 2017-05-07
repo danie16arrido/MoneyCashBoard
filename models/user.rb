@@ -1,6 +1,8 @@
 class User
+
   attr_reader :id
   attr_accessor :first_name, :last_name, :dob, :over_budget
+
   def initialize(params)
     @id = params['id'].to_i if params['id']
     @first_name = params['first_name']
@@ -114,7 +116,5 @@ class User
     income = Income.new(data)
     income.save()
   end
-
-
 
 end

@@ -1,6 +1,8 @@
 class Category
+
   attr_reader :id
   attr_accessor :name, :master_category_id
+
   def initialize(params)
     @id = params['id'].to_i if params['id']
     @name = params['name']

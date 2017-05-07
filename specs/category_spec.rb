@@ -2,7 +2,6 @@ require('minitest/autorun')
 require('minitest/emoji')
 require_relative('../models/category.rb')
 
-
 class TestCategory < MiniTest::Test
   def setup()
     category1_data = {
@@ -25,5 +24,5 @@ class TestCategory < MiniTest::Test
   def test_can_get_int_id()
     assert_equal(1, @category1.id)
   end
-  
+
 end

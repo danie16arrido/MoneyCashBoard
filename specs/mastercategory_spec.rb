@@ -2,7 +2,6 @@ require('minitest/autorun')
 require('minitest/emoji')
 require_relative('../models/mastercategory.rb')
 
-
 class TestMasterCategory < MiniTest::Test
   def setup()
     @m_category = MasterCategory.new({'id' => '1', 'name' => "Bills"})
@@ -20,5 +19,5 @@ class TestMasterCategory < MiniTest::Test
     @m_category.name = "Enjoyment"
     assert_equal("Enjoyment", @m_category.name)
   end
-  
+
 end

@@ -63,7 +63,4 @@ class Loan < Income
     SqlRunner.run(sql)
   end
 
-
-
-
 end

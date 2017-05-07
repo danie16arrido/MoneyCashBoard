@@ -2,7 +2,6 @@ require('minitest/autorun')
 require('minitest/emoji')
 require_relative('../models/User.rb')
 
-
 class TestUsers < MiniTest::Test
   def setup()
     user1_data = {

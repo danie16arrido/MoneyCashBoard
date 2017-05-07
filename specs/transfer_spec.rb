@@ -5,7 +5,6 @@ require_relative('../models/user.rb')
 require_relative('../models/category.rb')
 require_relative('../models/mastercategory.rb')
 
-
 class TestTransfer < MiniTest::Test
   def setup()
     @m_category1 = MasterCategory.new({'id' => '1', 'name' => "Bills"})
@@ -40,4 +39,5 @@ class TestTransfer < MiniTest::Test
     @transfer1.amount = 99.99
     assert_equal(99.99, @transfer1.amount)
   end
+  
 end

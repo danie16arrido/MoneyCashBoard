@@ -7,7 +7,6 @@ require_relative('../models/transfer.rb')
 require_relative('../models/income.rb')
 require_relative('../models/loan.rb')
 
-
 `psql -d moneydboard -f db/moneydboardtables.sql`
 
 housing = ['Mortgage', 'Rent', 'Council_Tax']
@@ -99,7 +98,6 @@ transfer5.save()
 
 transfer6 = mk_transfer_object(350, user2.id, 10)
 transfer6.save()
-
 
 binding.pry
 

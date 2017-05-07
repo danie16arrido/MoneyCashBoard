@@ -3,7 +3,6 @@ require('minitest/emoji')
 require_relative('../models/income.rb')
 require_relative('../models/loan.rb')
 
-
 class TestLoan < MiniTest::Test
   def setup()
     @loan1 = Loan.new({
@@ -31,5 +30,5 @@ class TestLoan < MiniTest::Test
     @loan1.is_payed = true
     assert_equal(true, @loan1.is_payed)
   end
-  
+
 end
