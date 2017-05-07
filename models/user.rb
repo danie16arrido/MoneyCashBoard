@@ -77,7 +77,12 @@ class User
     result = SqlRunner.run(sql)
     return result.map { |transfer| Transfer.new(transfer)}
   end
-
+  
+  def total_amount_spent()
+    result = list_transfers()
+    amounts_array = result.map { |transfer| transfer.amount.to_f }
+    return amounts_array.sum()
+  end
 
 
 
