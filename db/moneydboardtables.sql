@@ -1,9 +1,6 @@
 DROP TABLE IF EXISTS loans;
 DROP TABLE IF EXISTS incomes;
-
-
 DROP TABLE IF EXISTS transfers;
-
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS categories;
 DROP TABLE IF EXISTS mastercategories;
@@ -41,7 +38,7 @@ CREATE TABLE incomes(
   amount NUMERIC(8,2),
   op_date DATE,
   op_time TIME,
-  provider VARCHAR(255),
+  provider REFERENCES categories(id),
   user_id INT4 REFERENCES users(id)
 );
 
@@ -50,7 +47,7 @@ CREATE TABLE loans(
   amount NUMERIC(8,2),
   op_date DATE,
   op_time TIME,
-  provider VARCHAR(255),
+  provider REFERENCES categories(id),
   user_id INT4 REFERENCES users(id),
   is_payed BOOL
 );
