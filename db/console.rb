@@ -88,8 +88,14 @@ transfer2.save()
 transfer3 = mk_transfer_object(850, user1.id, 3)
 transfer3.save()
 
-transfer4= mk_transfer_object(120, user2.id, 3)
+transfer4 = mk_transfer_object(120, user2.id, 3)
 transfer4.save()
+
+transfer5 = mk_transfer_object(330, user1.id, 10)
+transfer5.save()
+
+transfer6 = mk_transfer_object(350, user2.id, 10)
+transfer6.save()
 
 
 

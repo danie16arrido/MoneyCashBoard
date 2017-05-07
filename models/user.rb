@@ -84,9 +84,25 @@ class User
     return amounts_array.sum()
   end
 
-  def list_transfers_by_master_category()
-    sql = ""
+  def list_transfers_by_master_category(master_category_id)
+    sql = "
+    SELECT * FROM transfers t
+    INNER JOIN categories c
+    on t.category_id = c.id
+    WHERE c.master_category_id = #{master_category_id} AND
+    t.user_id = #{@id};
+    "
+    result = SqlRunner.run(sql)
+    return result.map { |transfer| Transfer.new(transfer)}
+  end
 
+  def list_transfers_by_category(category_id)
+    sql = "
+    SELECT * FROM transfers t
+    INNER JOIN categories c
+    on t.category_id = c.id
+    WHERE c.id = #{category_id} AND t.user_id = #{@id}
+    "
     result = SqlRunner.run(sql)
     return result.map { |transfer| Transfer.new(transfer)}
   end
