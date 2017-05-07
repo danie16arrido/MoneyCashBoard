@@ -71,6 +71,14 @@ class User
     new_transfer.save()
   end
 
+  def list_transfers()
+    sql = "SELECT * FROM transfers
+    WHERE user_id = #{@id};"
+    result = SqlRunner.run(sql)
+    return result.map { |transfer| Transfer.new(transfer)}
+  end
+
+
 
 
 end
