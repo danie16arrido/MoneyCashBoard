@@ -60,4 +60,12 @@ class MasterCategory
     SqlRunner.run(sql)
   end
 
+  def sub_categories()
+    sql = "
+    SELECT * FROM categories WHERE master_category_id = #{@id};
+    "
+    result = SqlRunner.run(sql)
+    return result.map { |category| Category.new(category)}
+  end
+
 end

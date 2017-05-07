@@ -107,6 +107,14 @@ class User
     return result.map { |transfer| Transfer.new(transfer)}
   end
 
+  def add_income(amount, provider)
+    data = {'amount' => amount,
+            'provider' => provider,
+            'user_id' => @id}
+    income = Income.new(data)
+    income.save()
+  end
+
 
 
 end

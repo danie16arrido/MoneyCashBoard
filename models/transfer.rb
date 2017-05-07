@@ -4,7 +4,7 @@ class Transfer
   attr_accessor :amount, :op_date, :op_time, :user_id, :category_id
 
   def initialize(params)
-    @id = params['id'] if params['id']
+    @id = params['id'].to_i if params['id']
     @amount = params['amount']
     @op_date = params['op_date'] if params['op_date']
     @op_time = params['op_time'] if params['op_time']

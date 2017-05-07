@@ -65,4 +65,5 @@ class Loan < Income
 
 
 
+
 end

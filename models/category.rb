@@ -2,7 +2,7 @@ class Category
   attr_reader :id
   attr_accessor :name, :master_category_id
   def initialize(params)
-    @id = params['id'] if params['id']
+    @id = params['id'].to_i if params['id']
     @name = params['name']
     @master_category_id = params['master_category_id'].to_i
   end
@@ -55,6 +55,22 @@ class Category
     DELETE FROM categories;
     "
     SqlRunner.run(sql)
+  end
+
+  def self.find_by_name(name)
+    sql = "
+    SELECT * FROM categories WHERE name = '#{name}';
+    "
+    result = SqlRunner.run(sql)
+    return Category.new(result.first)
+  end
+
+  def master_category()
+    sql = "
+    SELECT * from mastercategories WHERE id = #{@master_category_id};
+    "
+    result = SqlRunner.run(sql)
+    return MasterCategory.new(result.first)
   end
 
 end
