@@ -1,0 +1,6 @@
+<h2>Expense details</h2>
+
+<%= @transfer.op_time%>
+<form method="post" action="/transfers/<%= @transfer.id %>/delete">
+  <input type="submit" value="Delete Expense"/>
+</form>

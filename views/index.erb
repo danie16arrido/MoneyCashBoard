@@ -1,0 +1,12 @@
+<h2>Index</h2>
+
+<% @transfers.each do |transfer|%>
+<ul>
+  <li><%= transfer.id%></li>
+  <li><%= transfer.amount%></li>
+  <li><%= transfer.op_date%></li>
+  <li><%= transfer.op_time%></li>
+  <li><%= transfer.my_category.name%></li>
+  <li><%= transfer.my_master_category.name%></li>
+</ul>
+<%end%>

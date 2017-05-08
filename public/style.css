@@ -1,0 +1,95 @@
+
+@import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+body {
+    width: 80%;
+    margin: auto;
+		padding: 2em;
+    flex-wrap: wrap;
+}
+header {
+  display: flex;
+  /*background-color: pink;*/
+  font-family: 'Roboto Slab', serif;
+  padding-left: 1em;
+}
+section {
+  display: flex;
+  justify-content: space-between;
+  padding: 2em;
+  /*background-color: red;*/
+  /*border: 1px solid #000;*/
+}
+
+.info_bar {
+  font-size: 2em;
+  font-family: 'Roboto Slab', serif;
+  /*display: flex;*/
+  /*background-color: blue;*/
+}
+
+.money_left {
+  /*display: flex;*/
+  /*background-color: yellow;*/
+  font-size: 4em;
+  font-family: 'Roboto Slab', serif;
+
+
+}
+main {
+  display: flex;
+  /*background-color: gray;*/
+  justify-content: space-around;
+}
+
+footer {
+  display: flex;
+  /*background-color: orange;*/
+}
+
+.main_btn {
+  display: inline-block;
+  margin: 0 10px 0 0;
+  padding: 15px 45px;
+  font-size: 48px;
+  font-family: 'Roboto Slab', serif;
+  line-height: 1.8;
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+.main_btn:focus {
+  outline: none
+}
+section.border .main_btn {
+  color: #6496c8;
+  background: rgba(0,0,0,0);
+  border: solid 5px #6496c8;
+}
+section.border .main_btn:hover,
+section.border .main_btn.hover {
+  border-color: #346392;
+  color: #346392;
+}
+section.border .main_btn:active,
+section.border .main_btn.active {
+  border-color: #27496d;
+  color: #27496d;
+}
+
+
+section.flat .main_btn {
+  color: #fff;
+  background-color: #6496c8;
+  text-shadow: -1px 1px #417cb8;
+  border: none;
+}
+section.flat .main_btn:hover,
+section.flat .main_btn.hover {
+  background-color: #346392;
+  text-shadow: -1px 1px #27496d;
+}
+section.flat .main_btn:active,
+section.flat .main_btn.active {
+  background-color: #27496d;
+  text-shadow: -1px 1px #193047;
+}

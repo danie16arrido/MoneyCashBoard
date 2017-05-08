@@ -66,4 +66,30 @@ class Transfer
     SqlRunner.run(sql)
   end
 
+  def my_category()
+    sql = "
+    SELECT c.name from transfers t
+    inner join categories c
+    on t.category_id = c.id
+    where t.id = #{@id};
+    "
+    result = SqlRunner.run(sql)
+    return Category.new(result.first)
+  end
+
+  def my_master_category()
+    sql = "
+    SELECT m.* FROM transfers t
+        INNER JOIN categories c
+        ON t.category_id = c.id
+        INNER JOIN mastercategories m
+        ON m.id = c.master_category_id
+        WHERE t.id = #{@id};
+    "
+    result = SqlRunner.run(sql)
+    return Category.new(result.first)
+  end
+
+
+
 end

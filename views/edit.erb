@@ -1,0 +1,25 @@
+<h2>Edit an Expense</h2>
+
+<section>
+<form action='/transfers' method="POST">
+  <label for="l_amount">Amount:</label>
+  <input type="number" step="any" id="l_amount" name="amount" value="<%= @transfer.amount%>"/>
+
+  <input type="hidden" id="l_user_id" name="user_id" value="<%= @user.id %>"/>
+
+  <label for="category_select">Select student's new house:</label>
+        <select id="category_select" name="category_id">
+          <option name="select">
+            <% @all_categories.each do |category|%>
+              <% if category.name != @transfer.my_category().name %>
+                <option value=<%= category.id %>><%= category.name %></option>
+              <% end %>
+              <% if category.name == @transfer.my_category().name %>
+              <option value=<%= category.id %> selected><%= category.name %></option>
+              <% end %>
+            <% end %>
+        </select>
+
+  <input type="submit" value="Save Changes">
+</form>
+</section>
