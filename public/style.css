@@ -4,45 +4,45 @@ body {
     width: 80%;
     margin: auto;
 		padding: 2em;
-    flex-wrap: wrap;
+
 }
 header {
-  display: flex;
-  /*background-color: pink;*/
+
+  background-color: pink;
   font-family: 'Roboto Slab', serif;
   padding-left: 1em;
 }
 section {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 2em;
-  /*background-color: red;*/
-  /*border: 1px solid #000;*/
+  background-color: red;
+
 }
 
 .info_bar {
   font-size: 2em;
   font-family: 'Roboto Slab', serif;
-  /*display: flex;*/
-  /*background-color: blue;*/
+
+  background-color: blue;
 }
 
 .money_left {
-  /*display: flex;*/
-  /*background-color: yellow;*/
+
+
+  background-color: yellow;
   font-size: 4em;
   font-family: 'Roboto Slab', serif;
 
 
 }
 main {
-  display: flex;
-  /*background-color: gray;*/
-  justify-content: space-around;
+
+  background-color: orange;
 }
 
 footer {
-  display: flex;
+  /*display: flex;*/
   /*background-color: orange;*/
 }
 
@@ -60,7 +60,7 @@ footer {
 .main_btn:focus {
   outline: none
 }
-section.border .main_btn {
+/*section.border .main_btn {
   color: #6496c8;
   background: rgba(0,0,0,0);
   border: solid 5px #6496c8;
@@ -74,7 +74,7 @@ section.border .main_btn:active,
 section.border .main_btn.active {
   border-color: #27496d;
   color: #27496d;
-}
+}*/
 
 
 section.flat .main_btn {

@@ -98,6 +98,12 @@ class User
     return result.map { |transfer| Transfer.new(transfer)}
   end
 
+  def total_master_category(master_category_id)
+    all = list_transfers_by_master_category(master_category_id)
+    amounts = all.map { |transfer| transfer.amount.to_f}
+    return amounts.inject(0){|sum,x| sum + x }
+  end
+
   def list_transfers_by_category(category_id)
     sql = "
     SELECT * FROM transfers t
@@ -107,6 +113,12 @@ class User
     "
     result = SqlRunner.run(sql)
     return result.map { |transfer| Transfer.new(transfer)}
+  end
+
+  def total_category(category_id)
+    all = list_transfers_by_category(category_id)
+    amounts = all.map { |transfer| transfer.amount.to_f}
+    return amounts.inject(0){|sum,x| sum + x }
   end
 
   def add_income(amount, provider)

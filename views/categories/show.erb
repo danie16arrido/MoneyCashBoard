@@ -1,0 +1,15 @@
+<h2>Show Category</h2>
+<%= erb :"categories/mypartial" %>
+<h3><%= @category.name%></h3>
+<%= @user.total_category(@category.id) %>
+<% @cat_transfer.each do |transfer|%>
+  <%= transfer.op_date%>
+  <%= transfer.op_time%>
+  <%= transfer.amount%>
+<%end%>
+<% if @cat_transfer.empty? %>
+  <form method="post" action="/categories/<%= @category.id %>/delete">
+    <input type="submit" value="Delete Category"/>
+  </form>
+<% end%>
+<a href="/categories/<%=@category.id%>/edit">Update Category</a>

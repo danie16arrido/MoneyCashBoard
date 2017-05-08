@@ -9,4 +9,10 @@
   <li><%= transfer.my_category.name%></li>
   <li><%= transfer.my_master_category.name%></li>
 </ul>
+
+<a href="/transfers/<%= transfer.id%>/edit">Update Expense</a>
+<form method="post" action="/transfers/<%= transfer.id %>/delete">
+  <input type="submit" value="Delete Expense"/>
+</form>
 <%end%>
+</section>

@@ -1,13 +1,15 @@
-<h2>Edit an Expense</h2>
+<h2>Edit Expense logged on <%= @transfer.op_date %> at <%= @transfer.op_time %></h2>
 
 <section>
-<form action='/transfers' method="POST">
+<form action='/transfers/<%= @transfer.id%>' method="POST">
+  <input type="hidden" id="l_id" name="id" value="<%= @transfer.id %>" />
   <label for="l_amount">Amount:</label>
   <input type="number" step="any" id="l_amount" name="amount" value="<%= @transfer.amount%>"/>
+  <input type="hidden" id="l_date" name="op_date" value="<%= @transfer.op_date %>" />
+  <input type="hidden" id="l_time" name="op_time" value="<%= @transfer.op_time %>" />
+  <input type="hidden" id="l_user" name="user_id" value="<%= @transfer.user_id %>" />
 
-  <input type="hidden" id="l_user_id" name="user_id" value="<%= @user.id %>"/>
-
-  <label for="category_select">Select student's new house:</label>
+  <label for="category_select">Select a new category </label>
         <select id="category_select" name="category_id">
           <option name="select">
             <% @all_categories.each do |category|%>
