@@ -1,0 +1,9 @@
+<h2>Home Page</h2>
+
+<section>
+  add more categories
+
+<% @mastercategories.each do |master| %>
+  <a href="/addtransfers/<%= master.id%>"><%= master.name%></a>
+<% end %>
+</section>
