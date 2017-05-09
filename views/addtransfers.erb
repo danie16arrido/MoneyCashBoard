@@ -1,10 +1,15 @@
-<h2>Home Page</h2>
-
-<section class="master_categories">
-  add more categories
-<ul>
-<% @mastercategories.each do |master| %>
-  <li><a href="/addtransfers/<%= master.id%>"><%= master.name%></a></li>
-<% end %>
-</ul>
+<section class="home">
+  <div class="area_title">
+    <!-- <h3>Choose a category</h3> -->
+  </div>
+    <% @mastercategories.each do |master| %>
+    <% if master.name != "Incomes" && master.name !="Loans" %>
+    <div class="main_btn1">
+      <dl>
+        <dt><a href="/addtransfers/<%= master.id%>"><img src="/icons/<%=master.name%>.png" alt="<%= master.name%>"></a></dt>
+        <dt><%= master.name%></dt>
+      </dl>
+        </div>
+        <% end %>
+    <% end %>
 </section>

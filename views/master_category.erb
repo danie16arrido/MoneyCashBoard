@@ -1,10 +1,13 @@
-<h2>master category options</h2>
-
-<section>
-  subcategories
+<section class="home">
+  <div class="area_title">
+    <h3>Adding expense to <mark><%= @mastercategory.name %></mark></h3>
+  </div>
 
 <% @mastercategory.sub_categories().each do |category| %>
-  <a href="/transfers/new/<%= category.id%>"><%= category.name %></a>
+
+  <div class="category_link">
+    <a href="/transfers/new/<%= category.id%>"><%= category.name %></a>
+  </div>
 
 <% end %>
 </section>

@@ -1,5 +1,7 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+@import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');
+@import url('https://fonts.googleapis.com/css?family=Lato:300');
 
 body {
   margin:0px;
@@ -7,22 +9,30 @@ body {
 body div{
   display:flex;
   flex-flow: row wrap;
-  width: 80%;
+  width: 70%;
   margin: auto;
 }
 body div header,section,main,footer{
-  /*background-color: #f1f7cd;*/
   border-radius: 7px;
   margin: 5px;
-  padding: 20px;
+  padding: 10px;
   font-family: 'Roboto Slab', serif;
-  border: black dotted 1px;
+  /*border: black dotted 1px;*/
 }
 
 body div header {
+  font-family: 'Rubik Mono One', sans-serif;
+  /*font-family: 'Roboto Slab', serif;*/
+  font-size: 35px;
   order:1;
   height: 100px;
   flex: 0 1 100%;
+
+}
+header a:visited, a:link {
+  color: #091D42;
+  text-decoration: none;
+  background-color: #ECEDF2;
 }
 
 body div section {
@@ -38,7 +48,6 @@ body div section.info_bar {
   order:1;
   height: auto;
   flex:1;
-
 }
 body div section.money_left {
   order:2;
@@ -56,24 +65,45 @@ body div footer {
   order:4;
   height: auto;
   flex: 0 1 100%;
+  padding-top: 60px;
+
+
 }
 
 section.home {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: flex-start;
+  text-align: center;
+  flex-direction: row;
+  /*color: #419FAD;*/
+  /*border: #9AB4CB solid 1px;*/
+  /*background-color: #ECEDF2;*/
 }
-.main_btn1, .main_btn2, .main_btn3{
+img {
+  opacity: 0.8;
+  height: 80px;
+  width: 80px;
+}
+/*.main_btn1, .main_btn2, .main_btn3 {
+  border-top: black dotted 1px;
+  border-bottom: black dotted 1px;
+  border-bottom: 10px;
+}*/
+.main_btn1, .main_btn2, .main_btn3, .category_link{
   justify-content: center;
   align-items: center;
   flex: 1;
-}
-.main_btn1 a:link, a:visited {
 
+  /*border: black dotted 1px;*/
+}
+.main_btn1, .main_btn2, .main_btn3, .category_link {
     padding: 14px 25px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    color: #419DB4;
 }
 
 div.main_btn1{
@@ -84,4 +114,103 @@ div.main_btn2{
 }
 div.main_btn3{
   order: 3;
+}
+
+.area_title{
+  flex: 0 1 100%;
+  justify-content: space-around;
+}
+
+.category_link {
+  font-size: 35px;
+  justify-content: space-around;
+}
+.category_link a:link, a:visited{
+  text-decoration: none;
+  color: #419DB4;
+  text-decoration: none;
+  border: black dashed 1px;
+  border-color: #419DB4;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+mark {
+  text-decoration: underline;
+  background-color: white;
+  color: #419DB4;
+  /*border: #419DB4 solid 1px;
+  border-left: none;
+  border-right: none;*/
+  padding: 5px;
+  text-decoration: none;
+}
+h3 {
+  text-decoration: underline;
+  background-color: white;
+  /*color: #419DB4;*/
+  border: black solid 1px;
+  border-left: none;
+  border-right: none;
+  padding: 5px;
+  text-decoration: none;
+}
+
+input {
+  /*width: 80px;*/
+  display: inline;
+  border: 1px dashed #999;
+  height: 35px;
+  background-color: #ECEDF2;
+  -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+
+
+}
+input[type="number"]
+{
+    font-size:24px;
+    color: #091D42;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    padding-left: 7px;
+
+}
+input[type="text"]
+{
+    font-size:24px;
+    color: #091D42;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    padding-left: 7px;
+
+}
+input[type="submit"]
+{
+  /*width: 100px;*/
+  /*position: absolute;*/
+
+  background: white;
+  border: 1px solid #999;
+  font-family: 'Roboto Slab', serif;
+  height: 38px;
+  color: #419DB4;
+  border: 1p solid #999;
+  font-size:24px;
+
+}
+select {
+  margin: 50px;
+  border: 1px solid #111;
+  background: transparent;
+  width: 150px;
+  padding: 5px 35px 5px 5px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: url(https://codeclan.com/wp-content/uploads/2016/03/favicon.png) 96% / 15% no-repeat #eee;
 }
