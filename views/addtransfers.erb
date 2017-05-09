@@ -1,9 +1,10 @@
 <h2>Home Page</h2>
 
-<section>
+<section class="master_categories">
   add more categories
-
+<ul>
 <% @mastercategories.each do |master| %>
-  <a href="/addtransfers/<%= master.id%>"><%= master.name%></a>
+  <li><a href="/addtransfers/<%= master.id%>"><%= master.name%></a></li>
 <% end %>
+</ul>
 </section>

@@ -6,16 +6,18 @@ require_relative('controllers/categories.rb')
 
 get '/home' do
   @user = User.all.first
+  @loans = MasterCategory.find_by_name("Loans")
+  @incomes = MasterCategory.find_by_name("Incomes")
   erb(:home)
 end
 
-get '/addtranfers' do
+get '/addtransfers' do
   @user = User.all.first
   @mastercategories = MasterCategory.all()
   erb(:addtransfers)
 end
 
-get '/addtranfers/:master_category_id' do
+get '/addtransfers/:master_category_id' do
   @user = User.all.first
   @mastercategory = MasterCategory.find_by_id(params[:master_category_id])
   erb(:master_category)

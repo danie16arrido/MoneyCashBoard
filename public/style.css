@@ -1,95 +1,87 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
+
 body {
-    width: 80%;
-    margin: auto;
-		padding: 2em;
-
+  margin:0px;
 }
-header {
-
-  background-color: pink;
+body div{
+  display:flex;
+  flex-flow: row wrap;
+  width: 80%;
+  margin: auto;
+}
+body div header,section,main,footer{
+  /*background-color: #f1f7cd;*/
+  border-radius: 7px;
+  margin: 5px;
+  padding: 20px;
   font-family: 'Roboto Slab', serif;
-  padding-left: 1em;
+  border: black dotted 1px;
 }
-section {
+
+body div header {
+  order:1;
+  height: 100px;
+  flex: 0 1 100%;
+}
+
+body div section {
+  order:2;
+  height: auto;
+  flex: 0 1 100%;
   display: flex;
-  justify-content: space-around;
-  padding: 2em;
-  background-color: red;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+body div section.info_bar {
+  order:1;
+  height: auto;
+  flex:1;
 
 }
-
-.info_bar {
-  font-size: 2em;
-  font-family: 'Roboto Slab', serif;
-
-  background-color: blue;
+body div section.money_left {
+  order:2;
+  font-size: 3em;
+  height: auto;
+  flex:1
+}
+body div main {
+  order:3;
+  min-height: 250px;
+  flex: 1;
+  display: flex;
+}
+body div footer {
+  order:4;
+  height: auto;
+  flex: 0 1 100%;
 }
 
-.money_left {
-
-
-  background-color: yellow;
-  font-size: 4em;
-  font-family: 'Roboto Slab', serif;
-
-
+section.home {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-main {
+.main_btn1, .main_btn2, .main_btn3{
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+.main_btn1 a:link, a:visited {
 
-  background-color: orange;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
 }
 
-footer {
-  /*display: flex;*/
-  /*background-color: orange;*/
+div.main_btn1{
+  order: 1;
 }
-
-.main_btn {
-  display: inline-block;
-  margin: 0 10px 0 0;
-  padding: 15px 45px;
-  font-size: 48px;
-  font-family: 'Roboto Slab', serif;
-  line-height: 1.8;
-  appearance: none;
-  box-shadow: none;
-  border-radius: 0;
+div.main_btn2{
+  order:2;
 }
-.main_btn:focus {
-  outline: none
-}
-/*section.border .main_btn {
-  color: #6496c8;
-  background: rgba(0,0,0,0);
-  border: solid 5px #6496c8;
-}
-section.border .main_btn:hover,
-section.border .main_btn.hover {
-  border-color: #346392;
-  color: #346392;
-}
-section.border .main_btn:active,
-section.border .main_btn.active {
-  border-color: #27496d;
-  color: #27496d;
-}*/
-
-
-section.flat .main_btn {
-  color: #fff;
-  background-color: #6496c8;
-  text-shadow: -1px 1px #417cb8;
-  border: none;
-}
-section.flat .main_btn:hover,
-section.flat .main_btn.hover {
-  background-color: #346392;
-  text-shadow: -1px 1px #27496d;
-}
-section.flat .main_btn:active,
-section.flat .main_btn.active {
-  background-color: #27496d;
-  text-shadow: -1px 1px #193047;
+div.main_btn3{
+  order: 3;
 }

@@ -3,25 +3,27 @@
   <head>
     <meta charset="utf-8">
     <title></title>
-    <link rel='stylesheet' href='/style.css'>
+    <link rel='stylesheet' href='style.css'>
   </head>
   <body>
-    <header>
-      <h1>Cash Dashboard</h1>
-    </header>
-    <section>
-        <div class="info_bar">
-          £ <%= @user.total_amount_spent/2%>
-        </div>
-        <div class="money_left">
-          £ <%= @user.total_amount_spent%>
-        </div>
-    </section>
-    <main>
-      <%= yield %>
-    </main>
-    <footer>
-      Footer
-    </footer>
+    <div>
+      <header>
+        <h1>Cash Dashboard</h1>
+      </header>
+      <section>
+          <section class="info_bar">
+            £ <%= @user.total_amount_spent/2%>
+          </section>
+          <section class="money_left">
+            £ <%= @user.total_amount_spent%>
+          </section>
+      </section>
+      <main>
+        <%= yield %>
+      </main>
+      <footer>
+        @yopero
+      </footer>
+    </div>
   </body>
 </html>

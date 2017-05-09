@@ -1,15 +1,21 @@
-<h2>Home Page</h2>
 
-<section class="flat">
-  <div class="main_btn">
-    <a href="/addtranfers">Expenses</a>
+<section class="home">
+  <div class="main_btn1">
+    <dl>
+      <dt><a href="/addtransfers"><img src="/icons/atm.png" alt="Expenses"></a></dt>
+      <dd>Expenses</dd>
+    </dl>
   </div>
-
-  <div class="main_btn">
-    <a href="/addtranfers">Incomes</a>
+  <div class="main_btn2">
+    <dl>
+      <dt><a href="/addtransfers/<%=@incomes.id%>"><img src="/icons/026-get-money.png" alt="Incomes"></a></dt>
+      <dd>Incomes</dd>
+    </dl>
   </div>
-
-  <div class="main_btn">
-    <a href="/addtranfers">Loans</a>
+  <div class="main_btn3">
+    <dl>
+      <dt><a href="/addtransfers/<%= @loans.id%>"><img src=/icons/024-loan.png alt="Loans"></a></dt>
+      <dd>Loans</dd>
+    </dl>
   </div>
 </section>

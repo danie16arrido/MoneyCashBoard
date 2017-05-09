@@ -129,4 +129,8 @@ class User
     income.save()
   end
 
+  # def transfer_from_to(start, end)
+  #   sql = "
+  #   SELECT * FROM transfers WHERE op_date >= '#{start}' and op_date < '#{end}' and user_id=#{@id};
+  # end
 end
