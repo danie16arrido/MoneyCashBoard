@@ -12,6 +12,7 @@ get '/categories' do
   # @transfers = @user.list_transfers()
   @all_categories = Category.all()
   @all_master_cat = MasterCategory.all()
+  @mastercategories = MasterCategory.all()
   erb(:"categories/index")
 end
 

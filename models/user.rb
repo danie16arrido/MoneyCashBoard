@@ -113,10 +113,10 @@ class User
 
   def list_transfers_by_category(category_id)
     sql = "
-    SELECT * FROM transfers t
+    SELECT t.* FROM transfers t
     INNER JOIN categories c
     on t.category_id = c.id
-    WHERE c.id = #{category_id} AND t.user_id = #{@id}
+    WHERE c.id = #{category_id} AND t.user_id = #{@id};
     "
     result = SqlRunner.run(sql)
     return result.map { |transfer| Transfer.new(transfer)}

@@ -22,3 +22,9 @@ get '/addtransfers/:master_category_id' do
   @mastercategory = MasterCategory.find_by_id(params[:master_category_id])
   erb(:master_category)
 end
+
+get '/addcategories' do
+  @user = User.all.first
+  @mastercategories = MasterCategory.all()
+  erb(:addcategories)
+end

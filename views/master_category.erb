@@ -1,8 +1,11 @@
 <section class="home">
+  <a href="/categories/new/<%= @mastercategory.id%>"><img src="/icons/add1.png" alt=""></a>
   <div class="area_title">
     <h3>Adding expense to <mark><%= @mastercategory.name %></mark></h3>
-  </div>
 
+  </div>
+  <!-- <div class="category_link">
+  </div> -->
 <% @mastercategory.sub_categories().each do |category| %>
 
   <div class="category_link">

@@ -1,15 +1,37 @@
-<h2>Show Category</h2>
-<%= erb :"categories/mypartial" %>
-<h3><%= @category.name%></h3>
-<%= @user.total_category(@category.id) %>
-<% @cat_transfer.each do |transfer|%>
-  <%= transfer.op_date%>
-  <%= transfer.op_time%>
-  <%= transfer.amount%>
-<%end%>
-<% if @cat_transfer.empty? %>
-  <form method="post" action="/categories/<%= @category.id %>/delete">
-    <input type="submit" value="Delete Category"/>
-  </form>
-<% end%>
-<a href="/categories/<%=@category.id%>/edit">Update Category</a>
+<section class="home">
+  <div class="area_title">
+    <h3><%= @category.name%> ------ Total: £ <%= @user.total_category(@category.id) %></h3>
+  </div>
+  <div class="category_link">
+    <a href="/categories/<%= @category.id%>/edit">Update</a>
+  </div>
+  <div class="category_link no_border">
+    <form class="no_border" method="post" action="/categories/<%= @category.id %>/delete">
+      <input type="submit" value="Delete Category"/>
+    </form>
+  </div>
+  <table id="ver-minimalist">
+    <tr>
+      <th>Id</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Category</th>
+      <th>Master Category</th>
+    </tr>
+    <% @cat_transfer.each do |transfer|%>
+      <tr>
+        <td><a href="/transfers/<%= transfer.id%>"><%= transfer.id%></a></td>
+        <td><%= transfer.amount%></td>
+        <td><%= transfer.op_date%></td>
+        <td><%= transfer.op_time%></td>
+        <td><%= transfer.my_category.name%></td>
+        <td><%= transfer.my_master_category.name%></td>
+      </tr>
+      <%end%>
+    </table>
+
+
+
+
+</section>

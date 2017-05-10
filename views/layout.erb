@@ -12,7 +12,10 @@
       </header>
       <section>
           <section class="info_bar">
-            £ <%= @user.total_amount_spent/2%>
+            <!-- £ <%= @user.total_amount_spent/2%> -->
+            <meter min="0" max="100" low="25" high="75" optimum="100" value="74"></meter>
+
+
           </section>
           <section class="money_left">
             £ <%= @user.total_amount_spent%>

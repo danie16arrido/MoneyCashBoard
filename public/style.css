@@ -49,6 +49,7 @@ body div section.info_bar {
   order:1;
   height: auto;
   flex:1;
+
 }
 body div section.money_left {
   order:2;
@@ -89,6 +90,11 @@ img {
   height: 80px;
   width: 80px;
 }
+img.small{
+  height: 40px;
+  width: 40px;
+}
+
 /*.main_btn1, .main_btn2, .main_btn3 {
   border-top: black dotted 1px;
   border-bottom: black dotted 1px;
@@ -119,6 +125,7 @@ div.main_btn3{
   flex: 0 1 100%;
   justify-content: space-around;
 }
+
 .category_link {
   font-size: 35px;
   justify-content: space-around;
@@ -153,7 +160,6 @@ h3 {
   text-decoration: none;
 }
 input {
-  /*width: 80px;*/
   display: inline;
   border: 1px dashed #999;
   height: 35px;
@@ -217,7 +223,7 @@ form {
 Serif;
 	font-size: 12px;
 	margin: 45px;
-	text-align: left;
+	text-align: center;
 	border-collapse: collapse;
 }
 #ver-minimalist th
@@ -239,4 +245,8 @@ Serif;
 }
 form.no_border{
   border: none;
+}
+meter {
+  flex:1;
+
 }
