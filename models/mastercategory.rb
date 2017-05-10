@@ -75,4 +75,6 @@ class MasterCategory
     result = SqlRunner.run(sql)
     return MasterCategory.new(result.first)
   end
+
+
 end

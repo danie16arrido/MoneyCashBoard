@@ -136,6 +136,23 @@ class User
     income.save()
   end
 
+  def mybalance()
+    bal = total_master_category(14) + total_master_category(13)
+    bal -= total_amount_spent()
+    return bal.to_i
+  end
+
+  def percentage()
+      income = total_master_category(14) + total_master_category(13)
+      expenses = total_amount_spent - income
+      per = ((expenses/income)*100).to_i
+      if expenses > income
+        return (per*-1)
+      else
+        return (per*-1)
+      end
+  end
+
   # def transfer_from_to(start, end)
   #   sql = "
   #   SELECT * FROM transfers WHERE op_date >= '#{start}' and op_date < '#{end}' and user_id=#{@id};
