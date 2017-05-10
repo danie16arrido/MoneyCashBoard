@@ -12,8 +12,6 @@
       <th>Master Category</th>
     </tr>
   <% @transfers.each do |transfer|%>
-
-
       <tr>
         <td><a href="/transfers/<%= transfer.id%>"><%= transfer.id%></a></td>
         <td><%= transfer.amount%></td>
@@ -22,13 +20,6 @@
         <td><%= transfer.my_category.name%></td>
         <td><%= transfer.my_master_category.name%></td>
       </tr>
-
-
-    <!-- <a href="/transfers/<%= transfer.id%>/edit">Update Expense</a>
-    <form method="post" action="/transfers/<%= transfer.id %>/delete">
-      <input type="submit" value="Delete Expense"/>
-    </form> -->
-
   <%end%>
     </table>
 </section>

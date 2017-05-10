@@ -1,6 +1,29 @@
-<h2>Expense details</h2>
-
-<%= @transfer.op_time%>
-<form method="post" action="/transfers/<%= @transfer.id %>/delete">
-  <input type="submit" value="Delete Expense"/>
-</form>
+<section class="home">
+  <div class="area_title">
+    <h3>Expense details</h3>
+  </div>
+  <table id="ver-minimalist">
+    <tr>
+      <th>Id</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Category</th>
+      <th>Master Category</th>
+    </tr>
+      <tr>
+        <td><a href="/transfers/<%= @transfer.id%>"><%= @transfer.id%></a></td>
+        <td><%= @transfer.amount%></td>
+        <td><%= @transfer.op_date%></td>
+        <td><%= @transfer.op_time%></td>
+        <td><%= @transfer.my_category.name%></td>
+        <td><%= @transfer.my_master_category.name%></td>
+      </tr>
+    </table>
+  <div class="category_link">
+    <a href="/transfers/<%= @transfer.id%>/edit">Update Expense</a>
+    <form method="post" action="/transfers/<%= @transfer.id %>/delete">
+      <input type="submit" value="Delete Expense"/>
+    </form>
+  </div>
+</section>

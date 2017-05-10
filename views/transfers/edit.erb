@@ -1,4 +1,9 @@
-<h2>Edit Expense logged on <%= @transfer.op_date %> at <%= @transfer.op_time %></h2>
+<section class="home">
+  <div class="area_title">
+    <h3>Edit Expense logged on <%= @transfer.op_date %> at <%= @transfer.op_time %></h3>
+  </div>
+</section>
+
 
 <section>
 <form action='/transfers/<%= @transfer.id%>' method="POST">
