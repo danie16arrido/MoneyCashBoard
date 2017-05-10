@@ -2,6 +2,7 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab');
 @import url('https://fonts.googleapis.com/css?family=Rubik+Mono+One');
 @import url('https://fonts.googleapis.com/css?family=Lato:300');
+@import url('https://fonts.googleapis.com/css?family=Fjalla+One');
 
 body {
   margin:0px;
@@ -17,32 +18,32 @@ body div header,section,main,footer{
   margin: 5px;
   padding: 10px;
   font-family: 'Roboto Slab', serif;
-  /*border: black dotted 1px;*/
 }
-
 body div header {
-  font-family: 'Rubik Mono One', sans-serif;
+  /*font-family: 'Rubik Mono One', sans-serif;*/
   /*font-family: 'Roboto Slab', serif;*/
+  font-family: 'Fjalla One', sans-serif;
   font-size: 35px;
   order:1;
   height: 100px;
   flex: 0 1 100%;
-
 }
 header a:visited, a:link {
   color: #091D42;
   text-decoration: none;
   background-color: #ECEDF2;
+  padding-left: 35px;
+  padding-right: 35px;
 }
-
 body div section {
   order:2;
   height: auto;
   flex: 0 1 100%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: baseline;
+  background-color: #fcfdff;
 }
 body div section.info_bar {
   order:1;
@@ -53,23 +54,25 @@ body div section.money_left {
   order:2;
   font-size: 3em;
   height: auto;
-  flex:1
+  flex: 0.5;
+  font-family: 'Fjalla One', sans-serif;
+  color: #419DB4;
+  justify-content: flex-end;
+  border: 0.1px dashed #419DB4;
 }
 body div main {
   order:3;
   min-height: 250px;
   flex: 1;
   display: flex;
+  /*background-color: #f9fafc;*/
 }
 body div footer {
   order:4;
   height: auto;
   flex: 0 1 100%;
   padding-top: 60px;
-
-
 }
-
 section.home {
   display: flex;
   flex-wrap: wrap;
@@ -95,8 +98,6 @@ img {
   justify-content: center;
   align-items: center;
   flex: 1;
-
-  /*border: black dotted 1px;*/
 }
 .main_btn1, .main_btn2, .main_btn3, .category_link {
     padding: 14px 25px;
@@ -105,7 +106,6 @@ img {
     display: inline-block;
     color: #419DB4;
 }
-
 div.main_btn1{
   order: 1;
 }
@@ -115,12 +115,10 @@ div.main_btn2{
 div.main_btn3{
   order: 3;
 }
-
 .area_title{
   flex: 0 1 100%;
   justify-content: space-around;
 }
-
 .category_link {
   font-size: 35px;
   justify-content: space-around;
@@ -134,7 +132,6 @@ div.main_btn3{
   padding-left: 10px;
   padding-right: 10px;
 }
-
 mark {
   text-decoration: underline;
   background-color: white;
@@ -155,7 +152,6 @@ h3 {
   padding: 5px;
   text-decoration: none;
 }
-
 input {
   /*width: 80px;*/
   display: inline;
@@ -165,8 +161,6 @@ input {
   -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
-
-
 }
 input[type="number"]
 {
@@ -184,13 +178,9 @@ input[type="text"]
     font-family: 'Lato', sans-serif;
     font-weight: bold;
     padding-left: 7px;
-
 }
 input[type="submit"]
 {
-  /*width: 100px;*/
-  /*position: absolute;*/
-
   background: white;
   border: 1px solid #999;
   font-family: 'Roboto Slab', serif;
@@ -198,21 +188,28 @@ input[type="submit"]
   color: #419DB4;
   border: 1p solid #999;
   font-size:24px;
-
+  margin-top: 10px;
 }
 select {
-  margin: 50px;
+  /*margin: 50px;*/
   border: 1px solid #111;
-  background: transparent;
-  width: 150px;
+  /*background: transparent;*/
+  /*width: 150px;*/
   padding: 5px 35px 5px 5px;
-  font-size: 16px;
+  font-size: 22px;
   border: 1px solid #ccc;
-  height: 34px;
+  height: 38px;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   background: url(https://codeclan.com/wp-content/uploads/2016/03/favicon.png) 96% / 15% no-repeat #eee;
+}
+form {
+  border: #419DB4 1px dashed;
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  padding-top: 0px;
 }
 #ver-minimalist
 {
@@ -220,7 +217,6 @@ select {
 Serif;
 	font-size: 12px;
 	margin: 45px;
-	/*width: 580px;*/
 	text-align: left;
 	border-collapse: collapse;
 }
@@ -240,4 +236,7 @@ Serif;
 	border-right: 30px solid #fff;
 	border-left: 30px solid #fff;
 	color: #669;
+}
+form.no_border{
+  border: none;
 }

@@ -24,14 +24,14 @@ post '/transfers' do #create
   @transfer = Transfer.new(params)
   @transfer.save()
   @user = User.all.first
-  @transfers = @user.list_transfers()
+  @transfers = @user.list_transfers_by_date()
   erb(:"transfers/index")
 end
 
 get '/transfers/:id' do #Read
   @transfer = Transfer.find_by_id( params[:id] )
   @user = User.all.first
-  @transfers = @user.list_transfers()
+  @transfers = @user.list_transfers_by_date()
   erb(:"transfers/show")
 end
 
