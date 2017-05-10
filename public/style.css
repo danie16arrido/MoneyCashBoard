@@ -14,7 +14,7 @@ body div{
   margin: auto;
 }
 body div header,section,main,footer{
-  border-radius: 7px;
+  /*border-radius: 7px;*/
   margin: 5px;
   padding: 10px;
   font-family: 'Roboto Slab', serif;
@@ -27,6 +27,7 @@ body div header {
   order:1;
   height: 100px;
   flex: 0 1 100%;
+  border: 0.1px dashed #419DB4;
 }
 header a:visited, a:link {
   color: #091D42;
@@ -43,7 +44,7 @@ body div section {
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: baseline;
-  background-color: #fcfdff;
+  /*background-color: #f2f6fc;*/
 }
 body div section.info_bar {
   order:1;
@@ -234,7 +235,7 @@ Serif;
 	border-bottom: 2px solid #6678b1;
 	border-right: 30px solid #fff;
 	border-left: 30px solid #fff;
-	color: #039;
+	/*color: #039;*/
 }
 #ver-minimalist td
 {
@@ -242,7 +243,8 @@ Serif;
 	border-right: 30px solid #fff;
 	border-left: 30px solid #fff;
 	color: #669;
-}
+} 
+
 form.no_border{
   border: none;
 }

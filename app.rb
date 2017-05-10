@@ -23,6 +23,12 @@ get '/addtransfers/:master_category_id' do
   erb(:master_category)
 end
 
+get '/reports' do
+  @user = User.all.first
+  @mastercategories = MasterCategory.all()
+  erb(:reports)
+end
+
 get '/addcategories' do
   @user = User.all.first
   @mastercategories = MasterCategory.all()

@@ -3,7 +3,7 @@
     <h3>Category <mark><%= @category.name%></mark> Total: £ <%= @user.total_category(@category.id) %></h3>
   </div>
   <div class="category_link">
-    <a href="/categories/<%= @category.id%>/edit">Update</a>
+    <a href="/categories/<%= @category.id%>/edit">Update Category</a>
   </div>
   <div class="category_link no_border">
     <form class="no_border" method="post" action="/categories/<%= @category.id %>/delete">

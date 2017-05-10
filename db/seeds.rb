@@ -22,7 +22,7 @@ insurence = ['Life', 'Health', 'Homeowner']
 car = ['Diesel', 'Tires', 'Tax', 'Repairs', 'Servicing']
 vacation = ['Flight', 'Train', 'Accommodation', 'Food']
 
-incomes = ['Wages', "Dad''s Christmas"]
+incomes = ['Wages', "Christmas"]
 loans = ['Barclays', 'Credit_Card', 'Mum']
 
 all_categories = [

@@ -3,10 +3,10 @@
     <h3>Categories List</h3>
   </div>
 
-  <table id="ver-minimalist">
+  <table align="center">
 <% @all_master_cat.each do |master_category|%>
     <tr>
-      <th><%= master_category.name %></th>
+      <th><h2><%= master_category.name %></h2></th>
       <th><%= @user.total_master_category(master_category.id) %></th>
       <th></a></th>
     </tr>
