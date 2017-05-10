@@ -6,7 +6,7 @@
   <table id="ver-minimalist">
 <% @all_master_cat.each do |master_category|%>
     <tr>
-      <th><a href="/categories/<%= master_category.id %>"><%= master_category.name %></a></th>
+      <th><%= master_category.name %></th>
       <th><%= @user.total_master_category(master_category.id) %></th>
       <th></a></th>
     </tr>

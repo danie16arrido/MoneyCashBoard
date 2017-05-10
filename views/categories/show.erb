@@ -1,6 +1,6 @@
 <section class="home">
   <div class="area_title">
-    <h3><%= @category.name%> ------ Total: £ <%= @user.total_category(@category.id) %></h3>
+    <h3>Category <mark><%= @category.name%></mark> Total: £ <%= @user.total_category(@category.id) %></h3>
   </div>
   <div class="category_link">
     <a href="/categories/<%= @category.id%>/edit">Update</a>

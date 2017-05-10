@@ -1,5 +1,6 @@
 <section class="home">
-  <a href="/categories/new/<%= @mastercategory.id%>"><img src="/icons/add1.png" alt=""></a>
+  <!-- <a href="/categories/new/<%= @mastercategory.id%>"><img src="/icons/add1.png" alt=""></a> -->
+
   <div class="area_title">
     <h3>Adding expense to <mark><%= @mastercategory.name %></mark></h3>
 
@@ -13,4 +14,7 @@
   </div>
 
 <% end %>
+<div class="category_link">
+  <a href="/categories/new/<%= @mastercategory.id%>">Add New Category</a>
+</div>
 </section>
