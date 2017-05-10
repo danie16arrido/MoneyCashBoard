@@ -80,6 +80,13 @@ class User
     return result.map { |transfer| Transfer.new(transfer)}
   end
 
+  def list_transfers_by_date()
+    sql = "SELECT * FROM transfers
+    WHERE user_id = #{@id} ORDER BY id DESC;"
+    result = SqlRunner.run(sql)
+    return result.map { |transfer| Transfer.new(transfer)}
+  end
+
   def total_amount_spent()
     result = list_transfers()
     amounts_array = result.map { |transfer| transfer.amount.to_f }

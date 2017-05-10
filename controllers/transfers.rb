@@ -9,7 +9,7 @@ require_relative('../models/loan.rb')
 
 get '/transfers' do
   @user = User.all.first
-  @transfers = @user.list_transfers()
+  @transfers = @user.list_transfers_by_date()
   erb(:"transfers/index")
 end
 
