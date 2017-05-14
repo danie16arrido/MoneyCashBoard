@@ -68,4 +68,13 @@ class MasterCategory
     return result.map { |category| Category.new(category)}
   end
 
+  def self.find_by_name(name)
+    sql = "
+    SELECT * FROM mastercategories WHERE name = '#{name}';
+    "
+    result = SqlRunner.run(sql)
+    return MasterCategory.new(result.first)
+  end
+
+
 end

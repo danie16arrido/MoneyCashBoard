@@ -22,7 +22,7 @@ insurence = ['Life', 'Health', 'Homeowner']
 car = ['Diesel', 'Tires', 'Tax', 'Repairs', 'Servicing']
 vacation = ['Flight', 'Train', 'Accommodation', 'Food']
 
-incomes = ['Wages', "Dad''s Christmas"]
+incomes = ['Wages', "Christmas"]
 loans = ['Barclays', 'Credit_Card', 'Mum']
 
 all_categories = [
@@ -93,11 +93,11 @@ transfer3.save()
 transfer4 = mk_transfer_object(120, user2.id, 3)
 transfer4.save()
 
-transfer5 = mk_transfer_object(330, user1.id, 10)
+transfer5 = mk_transfer_object(2000, user1.id, 45)
 transfer5.save()
-
-transfer6 = mk_transfer_object(350, user2.id, 10)
-transfer6.save()
+#
+# transfer6 = mk_transfer_object(350, user2.id, 10)
+# transfer6.save()
 
 binding.pry
 

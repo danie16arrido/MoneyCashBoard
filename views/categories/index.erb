@@ -1,0 +1,22 @@
+<section class="home">
+  <div class="area_title">
+    <h3>Categories List</h3>
+  </div>
+
+  <table align="center">
+<% @all_master_cat.each do |master_category|%>
+    <tr>
+      <th><h2><%= master_category.name %></h2></th>
+      <th><%= @user.total_master_category(master_category.id) %></th>
+      <th></a></th>
+    </tr>
+    <% master_category.sub_categories().each do |category| %>
+    <tr>
+      <td><%=category.name()%></td>
+      <td><%= @user.total_category(category.id)%></td>
+      <td><a href="/categories/<%= category.id %>">Details</a></td>
+    </tr>
+    <%end%>
+  <%end%>
+  </table>
+</section>

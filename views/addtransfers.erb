@@ -1,0 +1,13 @@
+<section class="home">
+
+    <% @mastercategories.each do |master| %>
+    <% if master.name != "Incomes" && master.name !="Loans" %>
+    <div class="main_btn1">
+      <dl>
+        <dt><a href="/addtransfers/<%= master.id%>"><img src="/icons/<%=master.name%>.png" alt="<%= master.name%>"></a></dt>
+        <dt><%= master.name%></dt>
+      </dl>
+        </div>
+        <% end %>
+    <% end %>
+</section>

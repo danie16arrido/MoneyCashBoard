@@ -1,0 +1,26 @@
+<section class="home">
+  <div class="area_title">
+    <h3>Expenses list</h3>
+  </div>
+  <table id="ver-minimalist">
+    <tr>
+      <th>Id</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Time</th>
+      <th>Category</th>
+      <th>Master Category</th>
+    </tr>
+  <% @transfers.each do |transfer|%>
+      <tr>
+        <td><a href="/transfers/<%= transfer.id%>"><%= transfer.id%></a></td>
+        <td><%= transfer.amount%></td>
+        <td><%= transfer.op_date%></td>
+        <td><%= transfer.op_time%></td>
+        <td><%= transfer.my_category.name%></td>
+        <td><%= transfer.my_master_category.name%></td>
+      </tr>
+      <% end %>
+    </table>
+
+</section>

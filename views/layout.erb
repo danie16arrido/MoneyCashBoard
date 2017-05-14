@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel='stylesheet' href='/style.css'>
+  </head>
+  <body>
+    <div>
+      <header>
+          <a href="/home">Ca$h<img src="/icons/logo.png" alt="">Dashboard</a>
+      </header>
+      <section>
+          <section class="info_bar">
+            <!-- £ <%= @user.total_amount_spent/2%> -->
+            <meter min="0" max="100" low="25" high="75" optimum="100" value="80"></meter>
+
+
+          </section>
+          <section class="money_left">
+            <!-- £ <%= @user.total_amount_spent() - @user.total_master_category(14) + @user.total_master_category(13)%> -->
+          £ <%= (2*@user.total_master_category(14) + 2*@user.total_master_category(13) - @user.total_amount_spent()).to_i%>
+          </section>
+      </section>
+      <main>
+        <%= yield %>
+      </main>
+      <footer>
+        <!-- @@ -->
+      </footer>
+    </div>
+  </body>
+</html>

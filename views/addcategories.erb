@@ -1,0 +1,15 @@
+<section class="home">
+  <div class="area_title">
+    <h3>Add a new Category</h3>
+  </div>
+  <% @mastercategories.each do |master| %>
+  <% if master.name != "Incomes" && master.name !="Loans" %>
+  <div class="main_btn1">
+    <dl>
+      <dt><a href="/categories/new/<%= master.id%>"><img src="/icons/<%=master.name%>.png" alt="<%= master.name%>"></a></dt>
+      <dt><%= master.name%></dt>
+    </dl>
+      </div>
+      <% end %>
+  <% end %>
+</section>

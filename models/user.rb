@@ -80,6 +80,13 @@ class User
     return result.map { |transfer| Transfer.new(transfer)}
   end
 
+  def list_transfers_by_date()
+    sql = "SELECT * FROM transfers
+    WHERE user_id = #{@id} ORDER BY id DESC;"
+    result = SqlRunner.run(sql)
+    return result.map { |transfer| Transfer.new(transfer)}
+  end
+
   def total_amount_spent()
     result = list_transfers()
     amounts_array = result.map { |transfer| transfer.amount.to_f }
@@ -98,15 +105,27 @@ class User
     return result.map { |transfer| Transfer.new(transfer)}
   end
 
+  def total_master_category(master_category_id)
+    all = list_transfers_by_master_category(master_category_id)
+    amounts = all.map { |transfer| transfer.amount.to_f}
+    return amounts.inject(0){|sum,x| sum + x }
+  end
+
   def list_transfers_by_category(category_id)
     sql = "
-    SELECT * FROM transfers t
+    SELECT t.* FROM transfers t
     INNER JOIN categories c
     on t.category_id = c.id
-    WHERE c.id = #{category_id} AND t.user_id = #{@id}
+    WHERE c.id = #{category_id} AND t.user_id = #{@id};
     "
     result = SqlRunner.run(sql)
     return result.map { |transfer| Transfer.new(transfer)}
+  end
+
+  def total_category(category_id)
+    all = list_transfers_by_category(category_id)
+    amounts = all.map { |transfer| transfer.amount.to_f}
+    return amounts.inject(0){|sum,x| sum + x }
   end
 
   def add_income(amount, provider)
@@ -117,4 +136,25 @@ class User
     income.save()
   end
 
+  def mybalance()
+    bal = total_master_category(14) + total_master_category(13)
+    bal -= total_amount_spent()
+    return bal.to_i
+  end
+
+  def percentage()
+      income = total_master_category(14) + total_master_category(13)
+      expenses = total_amount_spent - income
+      per = ((expenses/income)*100).to_i
+      if expenses > income
+        return (per*-1)
+      else
+        return (per*-1)
+      end
+  end
+
+  # def transfer_from_to(start, end)
+  #   sql = "
+  #   SELECT * FROM transfers WHERE op_date >= '#{start}' and op_date < '#{end}' and user_id=#{@id};
+  # end
 end
