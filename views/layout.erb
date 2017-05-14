@@ -18,8 +18,8 @@
 
           </section>
           <section class="money_left">
-            £ <%= @user.total_master_category(14) + @user.total_master_category(13)
-            - @user.total_amount_spent()%>
+            <!-- £ <%= @user.total_amount_spent() - @user.total_master_category(14) + @user.total_master_category(13)%> -->
+          £ <%= (2*@user.total_master_category(14) + 2*@user.total_master_category(13) - @user.total_amount_spent()).to_i%>
           </section>
       </section>
       <main>
