@@ -33,4 +33,5 @@ You must be able to create new Transactions ( which should include a merchant na
 
 ## Class Diagram
 
-![UML Diagram](https://github.com/danie16arrido/MoneyCashBoard/blob/master/MoneyCashBoard_ER.svg)
+![Alt text](https://github.com/danie16arrido/MoneyCashBoard/blob/master/MoneyCashBoard_ER.png)
+
